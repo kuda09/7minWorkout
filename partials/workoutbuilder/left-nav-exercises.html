@@ -1,0 +1,11 @@
+﻿<div id="left-nav-exercises"
+     ng-controller="ExercisesNavController">
+    <h2>Exercises</h2>
+
+    <div ng-repeat="exercise in exercises | orderBy: 'title'"
+         class="row">
+
+        <button class="btn btn-info col-sm-12"
+                ng-click="addExercise(exercise)">{{ exercise.title }} <span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "name": "angularSampleProject",
+  "version": "1.0.0",
+  "description": "A simple application to help learn angular",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kudakwashe Nyamainashe",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-local-storage": "^0.2.2",
+    "bootstrap": "^3.3.5"
+  },
+  "devDependencies": {}
+}

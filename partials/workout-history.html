@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        Workout Video
+    </h3>
+</div>
+<div class="modal-body"
+     style="width: 850px; margin: 0 auto;">
+    <div class="row">
+        <label for="">Filter Workouts:</label>
+
+        <div class="btn-group">
+            <label for="all"
+                   class="btn btn-info"><input type="radio"
+                                               name="searchFilter"
+                                               ng-model="search.completed"
+                                               value=""
+                                               id="all"> All</label>
+            <label for="completed"
+                   class="btn btn-info"><input type="radio"
+                                               name="searchFilter"
+                                               ng-model="search.completed"
+                                               value="true"
+                                               id="completed"> Complete</label>
+            <label for="incomplete"
+                   class="btn btn-info"><input type="radio"
+                                               name="searchFilter"
+                                               ng-model="search.completed"
+                                               value="false"
+                                               id="incomplete"> InComplete</label>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Started</th>
+                <th>Ended</th>
+                <th>Last Exercise</th>
+                <th>Exercises done</th>
+                <th>Completed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="historyItem in history | filter:search | orderBy: '-startedOn'">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ historyItem.startedOn | date: 'short' }}</td>
+                <td>{{ historyItem.endedOn | date: 'short' }}</td>
+                <td>{{ historyItem.lastExercise }}</td>
+                <td>{{ historyItem.exercisesDone }}</td>
+                <td>{{ historyItem.completed ? "Yes" : "No" }}</td>
+            </tr>
+            <tr ng-if="history.length==0"
+                class="warning">
+                <td colspan="6">No workout history found.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary"
+            ng-click="ok()">OK
+    </button>
+</div>

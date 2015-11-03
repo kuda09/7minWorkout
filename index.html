@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>7 minute Workout</title>
+    <link rel="stylesheet"
+          href="css/bootstrap.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700"
+          rel="stylesheet"
+          type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="css/app.css"/>
+
+
+</head>
+<body ng-controller="RootController">
+
+<div class="navbar navbar-default navbar-fixed-top top-navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--<h1>7 Minute Workout</h1>-->
+            <div class="navbar-brand">Personal Trainer</div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ng-click="showWorkoutHistory()"
+                   title="Workout History">History</a></li>
+        </ul>
+    </div>
+    <div id="top-nav-container"
+         class="second-top-nav">
+        <div id="top-nav"
+             ng-include="currentRoute.topNav">
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div id="content-container"
+         class="row">
+        <div class="col-sm-2 left-nav-bar"
+             ng-if="currentRoute.leftNav">
+            <div id="left-nav"
+                 ng-include="currentRoute.leftNav">
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div id="page-content"
+                 ng-view></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/lib/angular.js"></script>
+<script src="js/lib/angular-route.js"></script>
+<script src="js/lib/angular-sanitize.js"></script>
+<script src="js/lib/angular-media-player.js"></script>
+<script src="js/lib/ui-bootstrap.js"></script>
+<script src="js/lib/ui-bootstrap-tpls.js"></script>
+<script src="js/lib/angular-local-storage.js"></script>
+<script src="js/lib/angular-animate.js"></script>
+<script src="js/main.js"></script>
+<script src="js/root.js"></script>
+<script src="js/shared/model.js"></script>
+<script src="js/shared/services.js"></script>
+<script src="js/WorkoutBuilder/exercise.js"></script>
+<script src="js/WorkoutBuilder/workout.js"></script>
+<script src="js/WorkoutBuilder/services.js"></script>
+<script src="js/7MinWorkout/workout.js"></script>
+<script src="js/7MinWorkout/services.js"></script>
+<script src="js/7MinWorkout/WorkoutAudioController.js"></script>
+<script src="js/7MinWorkout/WorkoutVideosController.js"></script>
+<script src="js/7MinWorkout/filters.js"></script>
+</body>
+</html>
