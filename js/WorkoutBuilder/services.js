@@ -2,7 +2,7 @@
 
     "use strict";
 
-    var WorkoutBuilderService = function (WorkoutService, WorkoutPlan, Exericise) {
+    var WorkoutBuilderService = function (WorkoutService, WorkoutPlan, Exercise) {
 
         var service  = {};
         var buildingWorkout;
@@ -32,6 +32,8 @@
          };
 
         service.addExercise = function (exercise) {
+
+            buildingWorkout  = new WorkoutPlan({});
 
             buildingWorkout.exercises.push({
                 details: exercise,

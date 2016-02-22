@@ -11,7 +11,7 @@ angular.module('7minWorkout').filter('secondsToTime', function () {
         var seconds = sec - (hours * 3600) - (minutes * 60);
 
         return ("0" + hours).substr(-2) + ':'
-                + ("0" + minutes).substr(-2) + ':'
-                + ("0" + seconds).substr(-2);
+            + ("0" + minutes).substr(-2) + ':'
+            + ("0" + seconds).substr(-2);
     }
 });

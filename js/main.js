@@ -42,7 +42,7 @@
                 resolve: {
                 selectedWorkout: ['WorkoutBuilderService', function (WorkoutBuilderService) {
 
-                    return WorkoutBuilderService.toString();
+                    return WorkoutBuilderService;
                 }]
             }
             });
@@ -52,9 +52,16 @@
                 topNav: 'partials/workoutbuilder/top-nav.html',
                 controller: "WorkoutDetailController",
                 resolve: {
-                    selectedWorkout: ['WorkoutBuilderService', '$route', function (WorkoutBuilderService, $route) {
+                    selectedWorkout: ['WorkoutBuilderService', '$route', '$location', function (WorkoutBuilderService, $route, $location) {
 
-                        return WorkoutBuilderService.startBuilding($route.current.params.id);
+                        var workout = WorkoutBuilderService.startBuilding($route.current.params.id);
+
+                        if(!workout){
+
+                            $location.path('builder/workouts');
+                        }
+
+                        return workout;
                     }]
                 }
             });

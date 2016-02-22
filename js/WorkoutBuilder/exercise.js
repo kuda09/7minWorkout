@@ -16,7 +16,7 @@
         }
 
         init();
-    }
+    };
 
     var ExercisesNavController = function ($scope, WorkoutService, WorkoutBuilderService) {
 
@@ -33,7 +33,7 @@
         }
 
         init();
-    }
+    };
 
     ExerciseListController['$inject'] = ['$scope', 'WorkoutService', '$location'];
     ExercisesNavController['$inject'] = ['$scope', 'WorkoutService', 'WorkoutBuilderService'];
